@@ -1,6 +1,8 @@
 "use client";
 import { SetStateAction, useState } from "react";
 import TodoElement from "./ui/TodoElement";
+import "../../styles/TodoPage.css";
+import Searchbar from "./ui/Searchbar";
 
 export default function Home() {
   const [todo, setTodo] = useState<
@@ -37,20 +39,12 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
-      <input
-        type="search"
-        value={data}
-        placeholder="Ajouter ou Rechercher &#x1F50E; "
-        onChange={(e) => {
-          handleInput(e);
-        }}
+    <div className="todo-container">
+      <Searchbar
+        data={data}
+        handleTodo={handleTodo}
+        handleInput={handleInput}
       />
-      <button type="submit" onClick={handleTodo}>
-        {" "}
-        +
-      </button>
 
       <TodoElement
         todo={todo}

@@ -16,29 +16,42 @@ export default function TodoElement({
   >;
 }) {
   return (
-    <div>
-      {todo
-        .filter(
-          (item) =>
-            item.data.includes(data) || item.data.toLowerCase().includes(data)
-        )
-        .map((item) => {
-          return (
-            <div key={`todo-${item.id}`}>
-              <p className={item.done === true ? "task-done" : ""}>
-                {item.data}
-              </p>
-              <button onClick={() => handleRemove(item.id)}>
-                Suprimer la Tâche
-              </button>
-              <button onClick={() => handleDone(item.id)}>
-                {item.done ? "Annuler" : "Terminer"}{" "}
-              </button>
-            </div>
-          );
-        })}
-
-      <button onClick={() => setTodo([])}>TOUT SUPPRIMER</button>
-    </div>
+    <>
+      <div className="element-container">
+        {todo
+          .filter(
+            (item) =>
+              item.data.includes(data) || item.data.toLowerCase().includes(data)
+          )
+          .map((item) => {
+            return (
+              <div key={`todo-${item.id}`}>
+                <p
+                  className={item.done === true ? "task-done" : "task-not-done"}
+                >
+                  {item.data}
+                </p>
+                <button
+                  className="delete"
+                  onClick={() => handleRemove(item.id)}
+                >
+                  Suprimer la Tâche
+                </button>
+                <button
+                  className={
+                    item.done !== true ? "button-done" : "button-not-done"
+                  }
+                  onClick={() => handleDone(item.id)}
+                >
+                  {item.done ? "Annuler" : "Terminer"}{" "}
+                </button>
+              </div>
+            );
+          })}
+      </div>
+      <button className="delete" onClick={() => setTodo([])}>
+        TOUT SUPPRIMER
+      </button>
+    </>
   );
 }

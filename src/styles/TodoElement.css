@@ -2,3 +2,37 @@
   text-decoration: line-through;
   color: #ccc;
 }
+.task-not-done {
+  text-decoration: none;
+  color: black;
+}
+.element-container {
+  min-height: 65vh;
+  width: 50vw;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.delete {
+  margin-bottom: 1rem;
+}
+.delete:hover {
+  background-color: #ff0000bb;
+  color: white;
+}
+
+.button-done:hover {
+  background-color: #00cc00;
+}
+
+.button-not-done:hover {
+  background-color: #ffffff;
+}

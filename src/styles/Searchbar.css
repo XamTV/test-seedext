@@ -1,0 +1,22 @@
+.search-container {
+  display: flex;
+  gap: 1rem;
+  input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #ffffff;
+  }
+}
